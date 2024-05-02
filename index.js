@@ -1,3 +1,5 @@
+// index.js
+
 // Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -8,48 +10,75 @@ const questions = [
   {
     type: 'input',
     name: 'title',
-    message: 'What is the title of your project?',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `What is the ${chalk.default.cyan('title')} of your project?`;
+    },
   },
   {
     type: 'input',
     name: 'description',
-    message: 'Provide a description of your project:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Provide a ${chalk.default.green('description')} of your project:`;
+    },
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'Provide installation instructions:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Provide ${chalk.default.magenta('installation')} instructions:`;
+    },
   },
   {
     type: 'input',
     name: 'usage',
-    message: 'Provide usage information:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Provide ${chalk.default.yellow('usage')} information:`;
+    },
   },
   {
     type: 'input',
     name: 'contribution',
-    message: 'Provide contribution guidelines:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Provide ${chalk.default.blue('contribution')} guidelines:`;
+    },
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'Provide test instructions:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Provide ${chalk.default.red('test')} instructions:`;
+    },
   },
   {
     type: 'list',
     name: 'license',
-    message: 'Choose a license for your project:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Choose a ${chalk.default.green('license')} for your project:`;
+    },
     choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'BSD-3-Clause', 'None'],
   },
   {
     type: 'input',
     name: 'github',
-    message: 'Enter your GitHub username:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Enter your ${chalk.default.cyan('GitHub username')}:`;
+    },
   },
   {
     type: 'input',
     name: 'email',
-    message: 'Enter your email address:',
+    message: async (answers) => {
+      const chalk = await import('chalk');
+      return `Enter your ${chalk.default.magenta('email address')}:`;
+    },
   },
 ];
 
@@ -69,9 +98,12 @@ async function writeToFile(fileName, data) {
 async function init() {
   const chalk = await import('chalk');
   console.log(chalk.default.cyan('Welcome to the README Generator!'));
+  
   inquirer.prompt(questions).then(async (answers) => {
+    console.log(chalk.default.magenta('Generating README...'));
     const readmeContent = generateMarkdown(answers);
     await writeToFile('README.md', readmeContent);
+    console.log(chalk.default.yellow('README generation complete!'));
   });
 }
 
