@@ -6,9 +6,13 @@ function renderLicenseBadge(license) {
   return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// Function to return the license link
+function renderLicenseLink(license) {
+  if (license === 'None') {
+    return '';
+  }
+  return `\n* [License](#license)\n`;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
