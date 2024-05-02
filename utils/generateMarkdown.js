@@ -1,3 +1,5 @@
+// generateMarkdown.js
+
 // Function to return a license badge based on which license is passed in
 function renderLicenseBadge(license) {
   if (license === 'None') {
