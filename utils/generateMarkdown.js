@@ -70,5 +70,3 @@ If you have any questions about the repo, open an issue or contact me directly a
 }
 
 module.exports = generateMarkdown;
-
-

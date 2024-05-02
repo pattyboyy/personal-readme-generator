@@ -1,10 +1,10 @@
-# readme maker
+# helooo
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Description
 
-this program automatically generates README files for my projects
+ayyyyyy
 
 ## Table of Contents
 
@@ -19,11 +19,11 @@ this program automatically generates README files for my projects
 
 ## Installation
 
-none
+wfefwefwe
 
 ## Usage
 
-efficiancy booster
+wefqwfewqf
 
 ## License
 
@@ -31,11 +31,11 @@ This project is licensed under the MIT license.
 
 ## Contributing
 
-idk
+gewgwergwerg
 
 ## Tests
 
-have fun
+wergwegwerg
 
 ## Questions
 
